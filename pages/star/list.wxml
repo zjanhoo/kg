@@ -1,0 +1,29 @@
+
+<view class="page-header">
+  <text class="page-header-text">{{subtitle}}</text>
+</view>
+
+<scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
+    <block wx:for="{{stars}}" >
+    <navigator url="../starhome/person?uid={{item.encrtpt_id}}">
+        <view class="item"  > 
+          <image class="poster" src="{{item.headpic}}"></image>
+          <view class="meta">
+            <text class="title">{{item.nick}}</text>
+            <text class="sub-title">{{item.addr}}</text>
+            <view class="artists">
+              <text>粉丝：{{item.fans}} </text>
+            </view>
+          </view>
+          <view class="rating">
+            <text>{{item.ls}}</text>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <view class="tips">
+      <view><text>没有更多内容了</text></view>
+    </view>
+  </scroll-view>
+<loading hidden="{{!loading}}">加载中...</loading>
+

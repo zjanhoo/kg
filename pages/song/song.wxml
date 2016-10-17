@@ -1,0 +1,31 @@
+<!-- 电影明细 -->
+<loading hidden="{{!loading}}">
+  加载中...
+</loading>
+<scroll-view scroll-y="true" > 
+  <view class="meta">
+    <image class="poster" src="{{song.cover}}" background-size="cover"/>
+    <text class="title">{{song.song_name}}</text>
+    <text class="info">收听：{{song.play_num}}</text>
+    <text class="info">评论：{{song.comment_num}}</text>
+    <text class="info">献花：{{song.flower_num}}</text>
+    <text class="info">歌手：{{song.nick}}</text>
+  </view>
+  <!--
+  <view class="summary">
+    <text class="label">摘要：</text>
+    <text class="content">{{movie.summary}}</text>
+  </view>
+  -->
+  <view  class="playwrap" bindtap="audioPlay" >
+             <audio 
+             bindtimeupdate="timeupdate"
+             id="audio_id" 
+             poster="{{song.head_img_url}}" 
+             name="{{song.song_name}}" 
+             author="{{song.singer_name}}" 
+             src="{{song.playurl}}" 
+             action="{{action}}" controls loop="false" ></audio>
+        </view>
+</scroll-view>
+

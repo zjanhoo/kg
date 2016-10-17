@@ -1,0 +1,36 @@
+<scroll-view scroll-y="true" class="page-body" bindscrolltolower="loadMore">
+
+<view class="menu">
+    <view id="{{menu_id}}" bindtap="click_menu" wx:for="{{menu}}" 
+      wx:for-index="menu_id" wx:for-item="item" 
+      class="nav_font">
+        <block wx:if="{{menu_id == menuStatic}}">
+          <text class="nav_hover">{{item}}</text>
+        </block>
+        <block wx:else>{{item}}</block>
+    </view> 
+</view>
+
+    <block wx:for="{{ugclist}}" >
+   <navigator url="../song/song?shareId={{item.shareid}}">
+        <view class="item"  > 
+          <image class="poster" src="{{item.avatar}}"></image>
+          <view class="meta">
+            <text class="title">{{item.title}}</text>
+            <view class="artists">
+              <text>播放：{{item.play_count}} </text>
+            </view>
+          </view>
+        </view>
+      </navigator>
+    </block>
+    <view class="tips">
+      <view wx:if="{{hasMore}}">
+        <button type="default" size="default" 
+          bindtap="loadMore" hover-class="other-button-hover"> more </button>
+          <!-- <image src="/images/loading.gif" mode="aspectFill"/><text>玩了命的加载中...</text> -->
+        </view>
+      <view wx:else><text>没有更多内容了</text></view>
+    </view>
+</scroll-view>
+<loading hidden="{{!loading}}">加载中...</loading>
