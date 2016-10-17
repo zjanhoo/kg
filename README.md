@@ -12,10 +12,10 @@
 ### Welcome PR  or Wechat
 
 <p align="center">
-  <img src="./files/Wechat.png" alt="我的二维码" width="100%">
+  <img src="./files/WeChat.png" alt="我的二维码" width="100%">
 </p>
 
 ## LICENSE
 
-[MIT](./LICENSE)
-
+[MIT]
+Copyright (c) 2016 LiuWen. MIT Licensed, see LICENSE for details.
